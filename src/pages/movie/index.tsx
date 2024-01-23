@@ -6,7 +6,6 @@ import {
   Loader,
   Segment,
   Image,
-  Item,
   List,
 } from 'semantic-ui-react';
 import { fetchMovieDetails } from './fetch-data';
