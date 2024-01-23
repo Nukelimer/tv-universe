@@ -35,11 +35,11 @@ const Homepage = () => {
     color: displayFocus === type ? "white" : "black",
   });
 
-  // if (localStorage.getItem("guest_session_id") === null) {
+  if (localStorage.getItem("guest_session_id") === null) {
 
-  //   return <Navigate to="../authentication" />
+    return <Navigate to="../authentication" />
   
-  // }
+  }
 
   return (
     <div style={styles.wrapper}>

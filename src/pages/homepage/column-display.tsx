@@ -98,7 +98,7 @@ const ColumnDisplay = (props: Props) => {
                   description={mappedData.overview.slice(0, 200) + "..."}
                 />
 
-                {isRated && <Label style={{background: 'teal', color: 'white'}}> Your rating was: {mappedData.rating}</Label> }
+                {isRated && <Label style={{background: 'teal', color: 'white'}}> Your rating was: {mappedData.rating} / 10.</Label> }
               </Link>
               <Form style={{ marginTop: 10 }}>
                 <Form.Group inline>

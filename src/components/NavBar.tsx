@@ -5,6 +5,8 @@ const styles = {
 };
 
 
+
+
 const NavBar = () => {
   const navigate = useNavigate();
   
@@ -29,7 +31,7 @@ const NavBar = () => {
             Logout
           </Menu.Item>
         ) : (
-          <Menu.Item as={Link} to="/authentication">
+          <Menu.Item as={Link} to="../pages/homepage">
             USER
           </Menu.Item>
         )}

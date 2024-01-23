@@ -1,23 +1,25 @@
-
-
 import { Button, Segment, Header, Form, Grid } from "semantic-ui-react";
 import { useMutation } from "@tanstack/react-query";
 import login from "./login";
 import { styles } from "./styles";
 import { useNavigate } from "react-router-dom";
 import "./index.module.css";
+
 function Authentication() {
   const navigate = useNavigate();
-  const { data, mutate } = useMutation({
+  const { mutate } = useMutation({
     mutationKey: ["login"],
     mutationFn: login,
+    onSuccess: (data) => {
+      localStorage.setItem("guest_session_id", data.guest_session_id);
+      navigate("../");
+    },
   });
 
   const loginHandler = async () => {
     await mutate();
-    localStorage.setItem("guest_session_id", data.guest_session_id);
-    navigate("../ratings");
   };
+
   return (
     <Grid
       textAlign="center"
@@ -35,8 +37,8 @@ function Authentication() {
         </Header>
 
         <Form size="large">
-          <Segment style={styles.segment}>
-            <Button color="green" fluid size="large" onClick={loginHandler}>
+          <Segment style={styles.segment} onClick={loginHandler}>
+            <Button color="green" fluid size="large">
               Login
             </Button>
           </Segment>
