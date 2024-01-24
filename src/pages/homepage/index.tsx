@@ -1,5 +1,5 @@
 // 619b1df04856155b0484283895823e25
-import { Button } from "semantic-ui-react";
+import { Button, Loader } from "semantic-ui-react";
 import styles from "./styles";
 import { useState } from "react";
 import ColumnDisplay from "./column-display";
@@ -58,7 +58,7 @@ const Homepage = () => {
       </Button.Group>
 
       {moviesIsLoading || tvIsLoading ? (
-        <div>Loading...</div>
+        <Loader active/>
       ) : (
         <div style={{ marginTop: 20 }}>
           {displayFocus === TVShowTypeSwitch.Movies ? (

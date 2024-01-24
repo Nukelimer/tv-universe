@@ -72,7 +72,7 @@ const ColumnDisplay = (props: Props) => {
       centered
       verticalAlign="top"
       padded={"vertically"}>
-      {data.map((mappedData: DataToDisplay) => {
+      {data?.map((mappedData: DataToDisplay) => {
         return (
           <Grid.Column key={mappedData.id} style={{borderTop : '1px solid black'}}>
             <Card.Group  >

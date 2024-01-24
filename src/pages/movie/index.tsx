@@ -61,7 +61,7 @@ const Movies = () => {
 
                 <List.Item>
                   <List.Header> Genre:</List.Header>
-                  {data.genres.map((names: any) => {
+                  {data.genres > 1 && data.genres.map((names: any) => {
                     return <List.Item key={names.id}>{names.name}</List.Item>;
                   })}
                 </List.Item>

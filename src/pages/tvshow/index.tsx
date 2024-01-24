@@ -66,7 +66,7 @@ const TVShow = () => {
 
                 <List.Item>
                   <List.Header> Genre:</List.Header>
-                  {data.genres?.map((names: any) => {
+                  { Array.isArray(data.genres) && data.genres.map((names: any) => {
                     return <List.Item key={names.id}>{names.name}</List.Item>;
                   })}
                 </List.Item>
@@ -78,7 +78,7 @@ const TVShow = () => {
 
                 <List.Item>
                   <List.Header> Production Companies:</List.Header>
-                  {data?.production_companies
+                  {Array.isArray(data.production_companies) && data.production_companies
                     .map((company: any) => {
                       return company.name;
                     })
